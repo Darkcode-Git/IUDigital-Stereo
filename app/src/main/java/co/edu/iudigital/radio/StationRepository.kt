@@ -2,6 +2,7 @@ package co.edu.iudigital.radio.data.repository
 
 import co.edu.iudigital.radio.data.model.Station
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 interface StationRepository {
     fun getStations(): Flow<List<Station>>
@@ -10,8 +11,7 @@ interface StationRepository {
 
 class StationRepositoryImpl : StationRepository {
     override fun getStations(): Flow<List<Station>> {
-        // In a real app, this would fetch from a remote API or local database
-        return kotlinx.coroutines.flow.flow {
+        return flow {
             emit(
                 listOf(
                     Station(
@@ -34,6 +34,20 @@ class StationRepositoryImpl : StationRepository {
                         streamUrl = "https://example.com/stream3",
                         imageUrl = null,
                         description = "Jazz contemporneo"
+                    ),
+                    Station(
+                        id = "4",
+                        name = "IU Classical",
+                        streamUrl = "https://example.com/stream4",
+                        imageUrl = null,
+                        description = "Msica clsica maestra"
+                    ),
+                    Station(
+                        id = "5",
+                        name = "IU Electronic",
+                        streamUrl = "https://example.com/stream5",
+                        imageUrl = null,
+                        description = "Electrnica y dance"
                     )
                 )
             )
