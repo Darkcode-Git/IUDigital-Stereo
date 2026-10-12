@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_blue">#0A4A7A</color>
+    <color name="primary_red">#B71C1C</color>
+    <color name="deep_navy">#031B2D</color>
+    <color name="midnight_blue">#07253D</color>
+    <color name="steel_blue">#4A6572</color>
+    <color name="charcoal">#232F34</color>
+    <color name="obsidian">#131B21</color>
+    <color name="silver">#B0BEC5</color>
+    <color name="platinum">#ECEFF1</color>
+    <color name="crimson">#D32F2F</color>
+    <color name="ruby">#C62828</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

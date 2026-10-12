@@ -3,15 +3,16 @@ package co.edu.iudigital.radio
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import co.edu.iudigital.radio.ui.RadioRoute
-import co.edu.iudigital.radio.ui.RadioViewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import co.edu.iudigital.radio.ui.screens.PremiumMainScreen
+import co.edu.iudigital.radio.ui.screens.PremiumProfileScreen
+import co.edu.iudigital.radio.ui.theme.IUDigitalRadioTheme
 
 class MainActivity : ComponentActivity() {
     private val radioViewModel: RadioViewModel by viewModels()
@@ -19,17 +20,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MaterialTheme(
-                colorScheme = lightColorScheme(
-                    primary = Color(0xFF083C65),
-                    secondary = Color(0xFF9A1515)
-                )
-            ) {
+            IUDigitalRadioTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = Color(0xFFF8F9FA)
+                    color = MaterialTheme.colorScheme.background
                 ) {
-                    RadioRoute(viewModel = radioViewModel)
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = "main") {
+                        composable("main") { PremiumMainScreen(navController) }
+                        composable("profile") { PremiumProfileScreen(navController) }
+                    }
                 }
             }
         }
