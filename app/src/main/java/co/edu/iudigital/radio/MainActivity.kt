@@ -15,6 +15,8 @@ import co.edu.iudigital.radio.ui.screens.PremiumProfileScreen
 import co.edu.iudigital.radio.ui.theme.IUDigitalRadioTheme
 
 class MainActivity : ComponentActivity() {
+    private val radioViewModel: RadioViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
