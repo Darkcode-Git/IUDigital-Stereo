@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.IUDigitalRadio" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/primary_blue</item>
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@color/obsidian</item>
+    </style>
+</resources>
